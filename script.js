@@ -29,15 +29,10 @@ if(accessToken == null || accessToken == "" || accessToken == undefined){
  }
 
 
-fetch("https://accounts.spotify.com/authorize" ,{
-   method: 'GET',
+
+$.ajax({
+   url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
+   type: 'GET',
    headers: {
-      'Authorization' : 'Bearer ' + accessToken
-  }
-
-})
-.then(res=>{
-   res.json()
-})
-
-
+       'Authorization' : 'Bearer ' + accessToken
+   }
