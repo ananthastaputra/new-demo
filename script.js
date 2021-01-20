@@ -1,5 +1,6 @@
 const clientId = '568a5185f73f485883fb741842e339a7';
 const clientSecret = '2d8dcc505daa4be7b98c047a64f95608';
+let  search_query =document.getElementById("searchinput")
 
 const getUrlParameter = (sParam) => {
    let sPageURL = window.location.search.substring(1),////substring will take everything after the https link and split the #/&
@@ -30,9 +31,18 @@ if(accessToken == null || accessToken == "" || accessToken == undefined){
 
 
 
-$.ajax({
-   url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
-   type: 'GET',
+fetch(`https://api.spotify.com/v1/search?q=${search_query}&type=track`,{
+   method:"GET",
    headers: {
-       'Authorization' : 'Bearer ' + accessToken
+      "Authorization": 'Bearer ' + accessToken
+   
    }
+})
+.then(res=>{
+   res.json()
+
+
+})
+.then(data=>{
+   console.log(data)
+})
