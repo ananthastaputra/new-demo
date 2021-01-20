@@ -31,18 +31,18 @@ if(accessToken == null || accessToken == "" || accessToken == undefined){
 
 
 
-fetch(`https://api.spotify.com/v1/search?q=${search_query}&type=track`,{
-   method:"GET",
-   headers: {
-      "Authorization": 'Bearer ' + accessToken
+// fetch(`https://api.spotify.com/v1/search?q=${search_query}&type=track`,{
+//    method:"GET",
+//    headers: {
+//       "Authorization": 'Bearer ' + accessToken
    
-   }
-})
-.then(res=>{
-   res.json()
+//    }
+// })
+// .then(res=>{
+//    res.json()
 
 
-})
-.then(data=>{
-   console.log(data)
-})
+// })
+// .then(data=>{
+//    console.log(data)
+// })
